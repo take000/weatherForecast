@@ -1,6 +1,6 @@
 const section = document.querySelector("section");
 
-let requestURL = "http://api.openweathermap.org/data/2.5/forecast?q=Kagawa&units=metric&appid=cf470d956909ff9746801856c82275aa";
+let requestURL = "https://api.openweathermap.org/data/2.5/forecast?q=Kagawa&units=metric&appid=cf470d956909ff9746801856c82275aa";
 let request = new XMLHttpRequest();
 request.open("GET", requestURL);
 request.responseType = "text";
@@ -29,7 +29,7 @@ function showWeather(jsonObj) {
         let tempMax = (Math.round(now.main.temp_max * 10) / 10).toFixed(1);
         let tempMin = (Math.round(now.main.temp_min * 10) / 10).toFixed(1);
         let weather = now.weather[0].main;
-        let weatherImg = "http://openweathermap.org/img/wn/" + now.weather[0].icon + ".png";
+        let weatherImg = "https://openweathermap.org/img/wn/" + now.weather[0].icon + ".png";
 
         myTd[0].textContent = date;
         myTd[2].textContent = weather;
